@@ -1,0 +1,8 @@
+rootProject.name = 'eureka-sandbox'
+include 'time-server'
+include 'random-server'
+include 'time-client'
+include 'eureka-server'
+include 'random-client'
+include 'eureka-server-embedded'
+

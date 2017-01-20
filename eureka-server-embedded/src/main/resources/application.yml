@@ -1,0 +1,19 @@
+my:
+  appname: EurekaServer
+eureka:
+ instance:
+   instanceId: ${my.appname}-${server.port}
+   appname: ${my.appname}
+   preferIpAddress : true
+ client:
+   registerWithEureka: true
+   fetchRegistry: false
+   healthcheck:
+         enabled: true
+   serviceUrl:
+          defaultZone: http://127.0.0.3:8082/eureka/
+ server:
+   waitTimeInMsWhenSyncEmpty: 0
+
+server:
+  port: ${my.server.port}

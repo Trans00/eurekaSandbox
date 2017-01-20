@@ -1,0 +1,12 @@
+In some cases, it is preferable for Eureka to advertise the IP Adresses of services rather than the hostname. Set eureka.instance.preferIpAddress to true and when the application registers with eureka, it will use its IP Address rather than its hostname.
+
+http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
+
+Configuration:
+https://github.com/spring-cloud/spring-cloud-netflix/blob/master/spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaInstanceConfigBean.java
+https://github.com/spring-cloud/spring-cloud-netflix/blob/master/spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaClientConfigBean.java
+https://hub.docker.com/r/netflixoss/eureka/
+
+http://martinfowler.com/bliki/CircuitBreaker.html - TODO: read me
+
+http://techblog.netflix.com/2012/06/annoucing-archaius-dynamic-properties.html

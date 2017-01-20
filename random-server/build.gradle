@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.0.RC2"
+    }
+}
+
+plugins {
+    id "io.spring.dependency-management" version "1.0.0.RC2"
+}
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-netflix:1.2.3.RELEASE'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka-server'
+
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7'
+
+//    compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.4.0.v20161208'
+//    compile group: 'org.eclipse.jetty', name: 'jetty-webapp', version: '9.4.0.v20161208'
+}

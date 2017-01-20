@@ -1,0 +1,24 @@
+server:
+  port: 0
+eureka:
+  shouldUseDns: false
+  instance:
+    virtualHostName: com.dmgburg.random
+    appname: ${holy.application.id}
+    instanceId: ${holy.application.id}-${random.value}
+    preferIpAddress: true
+  client:
+    availabilityZones:
+      UK: crd,wtf
+      SG: sgo,sgd
+    registerWithEureka: true
+    fetchRegistry: false
+    region: ${my.region}
+    serviceUrl:
+      crd: http://127.0.0.3:8081/eureka/
+      wtf: http://127.0.0.3:8082/eureka/
+      sgd: http://127.0.0.3:8083/eureka/
+      sgo: http://127.0.0.3:8084/eureka/
+holy:
+  application:
+    id: RandomApplication

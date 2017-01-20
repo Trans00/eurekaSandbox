@@ -1,0 +1,7 @@
+server:
+  port: 0
+eureka:
+  client:
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://localhost:8084/eureka/
